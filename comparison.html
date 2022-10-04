@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FYP</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/9491730e27.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+  </head>
+  <body style="background-color: rgba(250, 250, 250, 0.5);">
+    <div class="modal fade lead" id="comparison_modal" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="content-header justify-content text-lg-start">
+                    <h5>
+                        <button class="close border-0" data-bs-dismiss="modal">
+                            <div class="btn btn-light bg-dark btn-lg">
+                                x
+                            </div>
+                        </button>
+                    </h5>
+                    
+                </div>
+                <form action="/view_report" method="POST" target="_blank">
+                    <div class="form-group row pb-3">
+                        <div class="col-4"><label>View Stats </label></div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <label for="DETAILED" class="form-check-label"> Detailed </label>
+                                <input type="radio" class="form-check-input" value="detailed" name="stats_required" id="DETAILED">
+                                
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <label for="SUMMARY" class="form-check-label"> Summary</label>
+                                <input type="radio" class="form-check-input" name="stats_required" value="summary" id="SUMMARY">
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="modal-body">
+                        <label for="player_id">Enter Player Name</label>
+                        <input type="text" name="player_id" id="PLAYER_ID" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-light bg-dark btn-lg col-12">
+                           View
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+      <div class="container-fluid" id="heading_background">
+        <div class="container-md">
+            <div class="row" style="text-align: center; " id="control">
+                <nav class="navbar navbar-dark navbar-expand-md nav-fill" style="background: transparent">
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <ul class="navbar-nav nav" style="text-align: center;">
+                            <li class="nav-item p-2"><a href="#" class="nav-link">Home</a></li>
+                            <li class="nav-item p-2">
+                              <div class="input-group">
+                                <div class="form-outline">
+                                  <input type="search" id="form1" class="form-control d-inline" placeholder="Search Player"/>
+                                </div>
+                                <button type="button" class="btn btn-success d-inline">
+                                  <i class="fas fa-search"></i>
+                                </button>
+                              </div>
+                            </li>
+                            <li class="nav-item p-2"><a href="#" class="nav-link">Compare Players</a></li>
+                            <li class="nav-item p-2"><a href="#" class="nav-link">Team</a></li>
+                            <li class="nav-item p-2"><a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#comparison_modal">Account</a></li>
+                            
+                        </ul>
+                        
+                    </div>
+                </nav>
+                <hr style="color:white; padding: 0%;">
+            </div>
+  
+            <div class="row align-items-right" style="padding:5% 0%;">
+                
+                <div class="col-12 text-center"><div class="display-1"> My Team</div><div class="display-4">  Team Builder </div></div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div class="row my-2">
+            <div class="display-4">Compare Players</div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="input-group">
+                    <div class="form-outline">
+                      <input type="search" id="form1" class="form-control d-inline" placeholder="Player1"/>
+                    </div>
+                    <button type="button" class="btn btn-success d-inline">
+                      <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_640,q_50/lsci/db/PICTURES/CMS/320400/320467.png" style="width: 75%" />
+            </div>
+
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div class="display-2" >VS</div>
+            </div>
+
+            <div class="col-4">
+                <div class="input-group">
+                    <div class="form-outline">
+                      <input type="search" id="form1" class="form-control d-inline" placeholder="Player2"/>
+                    </div>
+                    <button type="button" class="btn btn-success d-inline">
+                      <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_640,q_50/lsci/db/PICTURES/CMS/320400/320470.png" style="width: 75%" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 lead d-flex justify-content-center align-items-center">
+                Shadab Khan
+            </div>
+            <div class="col-4 lead d-flex justify-content-center align-items-center">
+                
+            </div>
+            <div class="col-4 lead d-flex justify-content-center align-items-center">
+                Shoaib Malik
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 lead d-flex justify-content-center align-items-center">
+                147
+            </div>
+            <div class="col-4 lead d-flex justify-content-center align-items-center ">
+                <strong>Matches</strong>
+            </div>
+            <div class="col-4 lead d-flex justify-content-center align-items-center">
+                147
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-lg-start text-white footer" style="background-color: #1f2022">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+          <!-- Section: Links -->
+          <section class="">
+              <!--Grid row-->
+              <div class="row">
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h6 class="text-uppercase mb-4 font-weight-bold">
+                          <i class="fab fa-opencart"></i>MY TEAM
+                      </h6>
+                      <p>
+                         My Team is designed to help psl franchises select their team during drafting. They are guided to invest wisely and efficiently. For every match MY Team suggest playing XI and during second innings of the match it suggest score according to DL Method.
+                      </p>
+                  </div>
+                  <!-- Grid column -->
+
+                  <hr class="w-100 clearfix d-md-none" />
+
+                  <!-- Grid column -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <h6 class="text-uppercase mb-4 font-weight-bold">MY TEAM</h6>
+                      <p>
+                          <a class="text-white">Home</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Players</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Team</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Account</a>
+                      </p>
+                  </div>
+                  <!-- Grid column -->
+
+                  <hr class="w-100 clearfix d-md-none" />
+
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <h6 class="text-uppercase mb-4 font-weight-bold">
+                          Features
+                      </h6>
+                      <p>
+                          <a class="text-white">Player Comparison</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Squad Selection</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Playing XI Selection</a>
+                      </p>
+                      <p>
+                          <a class="text-white">DL Method Score Suggestion</a>
+                      </p>
+                  </div>
+
+                  <!-- Grid column -->
+                  <hr class="w-100 clearfix d-md-none" />
+
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                      <p><i class="fas fa-home mr-3"></i> Comsats University Islamabad</p>
+                      <p><i class="fas fa-envelope mr-3"></i> sp19-bcs-067@student.comsats.edu.pk</p>
+                      <p><i class="fas fa-phone mr-3"></i> + 92 315 9422522</p>
+                      <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                  </div>
+                  <!-- Grid column -->
+              </div>
+              <!--Grid row-->
+          </section>
+          <!-- Section: Links -->
+
+          <hr class="my-3">
+
+          <!-- Section: Copyright -->
+          <section class="p-3 pt-0">
+              <div class="row d-flex align-items-center">
+                  <!-- Grid column -->
+                  <div class="col-md-7 col-lg-8 text-center text-md-start">
+                      <!-- Copyright -->
+                      <div class="p-3">
+                          © 2020 Copyright:
+                          <a class="text-white" href="https://www.espncricinfo.com/">cricinfo.com</a>
+                      </div>
+                      <!-- Copyright -->
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                      <!-- Facebook -->
+                      <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                              class="fab fa-facebook-f"></i></a>
+
+                      <!-- Twitter -->
+                      <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                              class="fab fa-twitter"></i></a>
+
+                      <!-- Google -->
+                      <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                              class="fab fa-google"></i></a>
+
+                      <!-- Instagram -->
+                      <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                              class="fab fa-instagram"></i></a>
+                  </div>
+                  <!-- Grid column -->
+              </div>
+          </section>
+          <!-- Section: Copyright -->
+      </div>
+      <!-- Grid container -->
+  </footer>
+  <!-- Footer -->
+  </body>
+
+</html>
